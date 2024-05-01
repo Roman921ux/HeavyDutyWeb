@@ -9,6 +9,7 @@ import ProfilePage from './pages/ProfilePage'
 import LoginPage from './pages/auth/LoginPage'
 import RegisterPage from './pages/auth/RegisterPage'
 import NotFoundPage from './pages/NotFoundPage'
+import RequireAuth from './pages/auth/RequireAuth'
 
 function App() {
 
@@ -18,13 +19,19 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />}>
           <Route path="/" element={
-            <HomePage />
+            <RequireAuth>
+              <HomePage />
+            </RequireAuth>
           } />
           <Route path="/exercises" element={
-            <ExercisesPage />
+            <RequireAuth>
+              <ExercisesPage />
+            </RequireAuth>
           } />
           <Route path="/profile" element={
-            <ProfilePage />
+            <RequireAuth>
+              <ProfilePage />
+            </RequireAuth>
           } />
 
           <Route path="/login" element={<LoginPage />} />
