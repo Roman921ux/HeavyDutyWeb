@@ -1,11 +1,17 @@
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
+import { resetTest } from './feature/user/user-slice'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { test } = useSelector(state => state.user)
+  const dispatch = useDispatch()
 
   return (
-    <Container>Hi for Project</Container>
+    <Container>
+      Hi for Project
+      <h1>{test}</h1>
+      <button onClick={() => dispatch(resetTest())}>ResetTest</button>
+    </Container>
   )
 }
 
