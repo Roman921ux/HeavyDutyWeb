@@ -5,6 +5,7 @@ function Header() {
   return (
     <Container>
       Header
+      <NavLink to='/'>home</NavLink>
       <NavLink to='/exercises'>exercises</NavLink>
       <NavLink to='/profile'>profile</NavLink>
       <NavLink to='/login'>login</NavLink>
