@@ -5,7 +5,7 @@ export const regidterThunk = createAsyncThunk(
   '@@user/register',
   async (formContent, { dispatch }) => {
     try {
-      const res = await fetch('http://localhost:4444/auth/register', {
+      const res = await fetch('https://heavy-duty-server.vercel.app/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -17,7 +17,7 @@ export const regidterThunk = createAsyncThunk(
         throw new Error('Ошибка регистрации');
       }
       const data = await res.json()
-      console.log('Data for thunk', data)
+      console.log('Data for thunk S', data)
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -27,7 +27,7 @@ export const loginThunk = createAsyncThunk(
   '@@user/login',
   async (formContent, { dispatch }) => {
     try {
-      const res = await fetch('http://localhost:4444/auth/login', {
+      const res = await fetch('https://heavy-duty-server.vercel.app/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ export const loginThunk = createAsyncThunk(
       }
 
       const data = await res.json()
-      console.log('Data for thunk', data)
+      console.log('Data for thunk S', data)
       return data
     } catch (error) {
       return rejectWithValue(error.message);
