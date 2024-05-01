@@ -40,8 +40,8 @@ export const loginThunk = createAsyncThunk(
       }
 
       const data = await res.json()
+      console.log('Data for thunk', data)
       return data
-      // console.log('Data for thunk', data)
     } catch (error) {
       return rejectWithValue(error.message);
     }
