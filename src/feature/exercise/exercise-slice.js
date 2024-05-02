@@ -8,7 +8,7 @@ export const getEventsThunk = createAsyncThunk(
     try {
       const { token } = getState().user
       // console.log('Token in getEventsThunk', token)
-      const res = await fetch('http://localhost:4444/event', {
+      const res = await fetch('https://heavy-duty-server.vercel.app/event', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ export const getEventsThunk = createAsyncThunk(
       }
 
       const data = await res.json()
-      // console.log('getEventsThunk', data)
+      // console.log('getEventsThunk S', data)
       return data
     } catch (error) {
       console.error('Error fetching user data:', error);
@@ -35,7 +35,7 @@ export const getExercisesThunk = createAsyncThunk(
     try {
       const { token } = getState().user
       // console.log('Token in getEventsThunk', token)
-      const res = await fetch('http://localhost:4444/exercise', {
+      const res = await fetch('https://heavy-duty-server.vercel.app/exercise', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ export const createEventThunk = createAsyncThunk(
     try {
       const { token } = getState().user
       console.log('Token in getEventsThunk', token)
-      const res = await fetch('http://localhost:4444/event', {
+      const res = await fetch('https://heavy-duty-server.vercel.app/event', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ export const removeEventThunk = createAsyncThunk(
     // console.log('EventId', id)
     try {
       const { token } = getState().user
-      const res = await fetch(`http://localhost:4444/event/${id}`, {
+      const res = await fetch(`https://heavy-duty-server.vercel.app/event/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ export const addEventSetThunk = createAsyncThunk(
 
     try {
       const { token } = getState().user
-      const res = await fetch('http://localhost:4444/event/approach', {
+      const res = await fetch('https://heavy-duty-server.vercel.app/event/approach', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ export const toggleEventSetThunk = createAsyncThunk(
     // console.log('toggleEventSetThunk', bodyData);
     try {
       const { token } = getState().user
-      const res = await fetch(`http://localhost:4444/event/${eventId}`, {
+      const res = await fetch(`https://heavy-duty-server.vercel.app/event/${eventId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -184,7 +184,7 @@ export const removeEventSetThunk = createAsyncThunk(
     const eventId = obj.event._id
     try {
       const { token } = getState().user
-      const res = await fetch(`http://localhost:4444/event/set/${eventId}`, {
+      const res = await fetch(`https://heavy-duty-server.vercel.app/event/set/${eventId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
