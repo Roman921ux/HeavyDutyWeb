@@ -100,7 +100,10 @@ const Block = styled.div`
   width: 100%;
   padding: 2px 5px;
   overflow: hidden;
-  background-color: #ecebff;
+  /* background-color: #ecebff; */
+  color: rgb(111, 112, 114);
+  border: 2px solid rgb(233, 236, 239);
+  background-color: rgb(233, 236, 239);
   border-radius: 5px;
 `;
 const Title = styled.div`

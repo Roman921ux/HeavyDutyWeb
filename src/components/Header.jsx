@@ -15,7 +15,7 @@ function Header() {
           (<NavBlock>
             <NavLink to='/profile' style={{ color: 'inherit' }}><Nav>Профиль</Nav></NavLink>
             <NavLink to='/exercises' style={{ color: 'inherit' }}><Nav>Упражнения</Nav></NavLink>
-            <button onClick={() => dispatch(resetToken())}>Выйти</button>
+            <Button onClick={() => dispatch(resetToken())}>Выйти</Button>
           </NavBlock>)
           :
           (<NavBlock>
@@ -30,25 +30,28 @@ function Header() {
 
 export default Header;
 
-// const Container = styled.div`
-//   display: flex;
-//   gap: 15px;
-// `;
 const Container = styled.div`
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px;
-  /* border: 2px solid rgba(145, 171, 219, 0.4); */
+  padding: 10px 25px;
+  border-radius: 10px;
+  //
+  box-shadow: var(--box-shadow);
+  border: var(--border-color);
   border-radius: 5px;
-  height: 50px;
   margin-bottom: 20px;
+  // gradient
+  background: rgb(67,151,241);
+  background: radial-gradient(circle, rgba(67,151,241,0.2644870448179272) 0%, rgba(188,139,231,0.16644782913165268) 53%);
 `;
 const Logo = styled.span`
   font-family: "Bebas Neue", sans-serif;
   font-style: normal;
   font-size: var(--largeText-size);
-  letter-spacing: 10px;
+  font-weight: var(--largeText-weight);
+  letter-spacing: 5px;
   cursor: pointer;
 `
 const Nav = styled.span`
@@ -56,10 +59,13 @@ const Nav = styled.span`
   font-weight: var(--middleText-weight);
   cursor: pointer;
 `
-
 const NavBlock = styled.div`
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
+`
+const Button = styled.button`
+  font-size: var(--smallText-size);
+  font-weight: var(--smallText-weight);
 `
 

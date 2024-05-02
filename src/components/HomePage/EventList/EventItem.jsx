@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-// import ApproachesItem from './Exercises/ApproachesItem';
 import SetItem from './SetItem';
+// icons
+import { DeleteOutlined, PlusSquareOutlined, RadarChartOutlined, FireOutlined } from '@ant-design/icons';
+// redux
 import { useDispatch } from 'react-redux';
 import { getEventsThunk, removeEventThunk } from '../../../feature/exercise/exercise-slice';
 
@@ -37,9 +39,18 @@ function EventItem({ event, setModal }) {
           <Title fs={15}>{event.title}</Title>
         </Block>
         <Block>
-          {/* <PlusCircleOutlined style={{ fontSize: '20px' }} onClick={() => setModal(event)} /> */}
-          <Title onClick={() => setModal(event, 'add')}>🎲</Title>
-          <Title onClick={() => removeEvent()}>Удалить</Title>
+          <BottomBlock>
+            <Title onClick={() => setModal(event, 'add')}><FireOutlined style={{ "color": "rgb(111, 112, 114)" }} /></Title>
+          </BottomBlock>
+          <BottomBlock>
+            <Title onClick={() => removeEvent()}><DeleteOutlined style={{ "color": "rgb(111, 112, 114)" }} /></Title>
+          </BottomBlock>
+          {/* <BottomBlock>
+            <Title onClick={() => setModal(event, 'add')}><RadarChartOutlined style={{ "color": "rgb(111, 112, 114)" }} /></Title>
+          </BottomBlock> */}
+
+          {/* <Title onClick={() => setModal(event, 'add')}><Button>+</Button></Title>
+          <Title onClick={() => removeEvent()}><Button>удалть</Button></Title> */}
         </Block>
       </TopBlock>
 
@@ -55,13 +66,18 @@ function EventItem({ event, setModal }) {
 export default EventItem;
 
 const Container = styled.div`
-  border: 1.5px solid rgba(117, 125, 197, 0.3);
+  border: var(--border-color);
+  box-shadow: var(--box-shadow);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 15px;
+  /* transition: all 300ms ease-in-out; */
+  /* &:hover {
+    transform: scale(1.01);
+  } */
 `;
 const TopBlock = styled.div`
   width: 100%;
@@ -72,7 +88,10 @@ const TopBlock = styled.div`
 const BottomBlock = styled.div`
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+  padding: 1px 8px;
+  border-radius: 5px;
+  border: 1px solid rgb(111, 112, 114, 0.2);
 `;
 const Img = styled.div`
   border: 2px solid rgba(1,1,1, 0.4);
@@ -82,14 +101,22 @@ const Img = styled.div`
   height: 50px;
 `;
 const Title = styled.div`
+  font-size: var(--middleText-size);
+  font-weight: var(--middleText-weight);
+  cursor: pointer;
+`;
+const Button = styled.button`
   font-size: var(--smallText-size);
   font-weight: var(--smallText-weight);
   cursor: pointer;
+  border: 2px solid rgb(233, 236, 239);
+  background-color: rgb(233, 236, 239);
+  color: rgb(111, 112, 114);
 `;
 const Block = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 `;
 
 const BlockApproach = styled.div`

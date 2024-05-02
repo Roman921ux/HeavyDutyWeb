@@ -13,7 +13,6 @@ function ExerciseItem({ exercise, date }) {
     // const time = date.substring(0, 19);
     const time = date;
 
-
     dispatch(createEventThunk({ exercise, time }))
     navigate('/')
   }
@@ -34,7 +33,8 @@ function ExerciseItem({ exercise, date }) {
 export default ExerciseItem;
 
 const Container = styled.div`
-  border: 1.5px solid rgba(117, 125, 197, 0.3);
+  border: var(--border-color);
+  box-shadow: var(--box-shadow);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -50,8 +50,8 @@ const Img = styled.div`
   height: 50px;
 `;
 export const Title = styled.div`
-  /* font-size: var(--middleText-size);
-  font-weight: var(--middleText-weight); */
+  font-size: var(--middleText-size);
+  font-weight: var(--middleText-weight);
 `;
 const Block = styled.div`
   display: flex;
@@ -59,12 +59,9 @@ const Block = styled.div`
   gap: 15px;
 `;
 const Button = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 15px;
   border: 2px solid rgb(233, 236, 239);
   background-color: rgb(233, 236, 239);
   color: rgb(111, 112, 114);
-  /* font-size: var(--smallText-size);
-  font-weight: var(--smallText-weight); */
+  font-size: var(--smallText-size);
+  font-weight: var(--smallText-weight);
 `;

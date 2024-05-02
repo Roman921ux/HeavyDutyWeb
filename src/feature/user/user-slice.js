@@ -53,7 +53,7 @@ export const getMeThunk = createAsyncThunk(
     try {
       const { token } = getState().user
       console.log('Token', token)
-      const res = await fetch('http://localhost:4444/auth/me', {
+      const res = await fetch('https://heavy-duty-server.vercel.app/auth/me', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

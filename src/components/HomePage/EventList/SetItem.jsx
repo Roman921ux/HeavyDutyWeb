@@ -6,7 +6,6 @@ import { useState } from 'react';
 
 
 function SetItem({ item, event, setModal }) {
-  const { modalToggle } = useSelector(state => state.exercises);
   const [valuesInput, setValuesInput] = useState({
     kg: 0,
     repeat: 0
@@ -42,12 +41,23 @@ function SetItem({ item, event, setModal }) {
 export default SetItem;
 
 const Container = styled.div`
-  border: 1.5px solid rgb(117, 125, 197, 0.3);
+  /* border: var(--border-color);
+  box-shadow: var(--box-shadow); */
+  border: 2px solid rgb(233, 236, 239);
+  background-color: rgb(233, 236, 239);
+  color: rgb(111, 112, 114);
+  font-size: var(--smallText-size);
+  font-weight: var(--smallText-weight);
   padding: 5px;
   border-radius: 5px;
-  //
-  /* display: flex;
-  align-items: center; */
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    /* transform: scale(1.03); */
+    background-color: rgb(221, 223, 227);
+    border-color: rgb(221, 223, 227);
+    cursor: pointer;
+  }
 `;
 const Title = styled.div`
   font-size: var(--smallText-size);

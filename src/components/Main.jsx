@@ -4,7 +4,6 @@ import styled from 'styled-components';
 function Main() {
   return (
     <Container>
-      Main
       <Outlet />
     </Container>
   );

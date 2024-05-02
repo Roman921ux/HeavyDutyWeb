@@ -46,4 +46,8 @@ function App() {
 export default App
 
 const Container = styled.div`
+  /* border: 1px solid red; */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
 `

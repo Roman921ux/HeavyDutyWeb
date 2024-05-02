@@ -29,10 +29,10 @@ const Container = styled.div`
 `;
 
 export const Text = styled.span`
-  font-size: 18px;
-  font-weight: 400;
+  font-size: var(--middleText-size);
+  font-weight: var(--middleText-weight);
 `
 export const Title = styled.span`
-  font-size: 18px;
-  font-weight: 400;
+  font-size: var(--largeText-size);;
+  font-weight: var(--largeText-weight);;
 `

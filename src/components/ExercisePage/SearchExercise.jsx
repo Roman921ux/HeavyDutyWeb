@@ -15,7 +15,7 @@ function SearchExercise() {
 
   return (
     <Container>
-      <span>{categoryExercise}</span>
+      <Title>Выбрано: {categoryExercise}</Title>
       <Search placeholder='Найди свое упражнение' value={value} onChange={(e) => setValue(e.target.value)} />
       <BlockBtn>
         {categotyBtn.map(item => <Btn key={item.category} onClick={() => { dispatch(toggleCategory(item.category)) }}>{item.title}</Btn>)}
@@ -31,7 +31,7 @@ export default SearchExercise;
 
 const Container = styled.div`
   width: 50%;
-  /* max-height: 100vh; */
+  max-height: 80vh;
   /* border: 1px solid red; */
 
   display: flex;
@@ -54,8 +54,7 @@ const AllExersise = styled.div`
   flex-direction: column;
   gap: 15px;
   max-height: 370px;
-  /* border-top: 5px solid rgba(117, 125, 197, 0.3); */
-  /* border-radius: 5px 0 0 5px; */
+  /* border-bottom: 2px solid var(--dim2-color);  */
 `;
 
 const BlockBtn = styled.div`
@@ -68,6 +67,10 @@ const BlockBtn = styled.div`
   /* border: 1px solid red; */
 `
 const Btn = styled.button`
-  /* font-size: var(--smallText-size);
-  font-weight: var(--smallText-weight); */
+  font-size: var(--smallText-size);
+  font-weight: var(--smallText-weight);
+`
+const Title = styled.span`
+  font-size: var(--middleText-size);
+  font-weight: var(--middleText-weight);
 `

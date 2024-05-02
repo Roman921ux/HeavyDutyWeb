@@ -63,14 +63,12 @@ function Exercises() {
     }
   }
 
-
-
   return (
     <Container>
       {modalAdd || modalToggle ? (<SetForm onSubmit={addApproachEvent} forInput={{ setValuesInput, valuesInput }} event={event} approachesId={approachesId} />)
         :
         (<>
-          <span>Date: {date.substring(0, 10)}</span>
+          <Title>Date: {date.substring(0, 10)}</Title>
           {eventsToday.map(event => <EventItem key={event._id} event={event} setModal={toggleModal} />)}
           <EventAddItem />
         </>)
@@ -88,5 +86,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding-right: 1%;
+  /* padding-right: 1%; */
+`;
+
+
+const Title = styled.div`
+  font-size: var(--largeText-size);
+  font-weight: var(--smallText-weight);
+  /* color: var(--dim1-color) */
 `;
