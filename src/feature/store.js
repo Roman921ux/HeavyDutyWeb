@@ -12,11 +12,11 @@ import {
 import storage from 'redux-persist/lib/storage'
 import { combineReducers } from 'redux'
 // reducers
-// import { exercisesReducer } from "./exercises/exercises-slise"
 import { userReducer } from './user/user-slice'
+import { exercisesReducer } from "./exercise/exercise-slice"
 
 const rootReducer = combineReducers({
-  // exercises: exercisesReducer,
+  exercises: exercisesReducer,
   user: userReducer,
 })
 
